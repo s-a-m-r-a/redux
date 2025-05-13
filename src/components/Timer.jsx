@@ -1,7 +1,6 @@
-// src/components/Timer.js
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { startTimer, stopTimer, resetTimer, increment } from '../timerSlice';
+import { startTimer, stopTimer, resetTimer, increment } from '..redux/timerSlice';
 
 const Timer = () => {
   const dispatch = useDispatch();
