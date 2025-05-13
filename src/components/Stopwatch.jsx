@@ -39,7 +39,7 @@ function Stopwatch() {
         }}>Sıfırla</button>
       </div>
       <div className="laps">
-        <h2>Dairələr</h2>
+        <h2>Loops</h2>
         <ul>
           {laps.map((lap, index) => (
             <li key={index}>{formatTime(lap)}</li>
