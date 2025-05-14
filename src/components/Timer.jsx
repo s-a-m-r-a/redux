@@ -1,32 +1,38 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { startTimer, stopTimer, resetTimer, increment } from '../../redux/timerSlice';
+import { incrementHours, incrementMins, incrementSecs, addMeasurements } from '../../redux/store';
 
-const Timer = () => {
+function Timer() {
+  const { hours, minutes, seconds, measurements } = useSelector((state) => state.timer);
   const dispatch = useDispatch();
-  const seconds = useSelector((state) => state.timer.seconds);
-  const isRunning = useSelector((state) => state.timer.isRunning);
-
-  useEffect(() => {
-    let interval;
-    if (isRunning) {
-      interval = setInterval(() => {
-        dispatch(increment());
-      }, 1000);
-    } else {
-      clearInterval(interval);
-    }
-    return () => clearInterval(interval);
-  }, [isRunning, dispatch]);
 
   return (
-    <div>
-      <h1>Timer: {seconds} seconds</h1>
-      <button onClick={() => dispatch(startTimer())}>Start</button>
-      <button onClick={() => dispatch(stopTimer())}>Stop</button>
-      <button onClick={() => dispatch(resetTimer())}>Reset</button>
+    <div className="timer-container">
+      <div className="time-controls">
+        <div>
+          <h1>{hours.toString().padStart(2, "0")}</h1>
+          <button onClick={() => dispatch(incrementHours())}>+</button>
+        </div>
+        <div>
+          <h1>{minutes.toString().padStart(2, "0")}</h1>
+          <button onClick={() => dispatch(incrementMins())}>+</button>
+        </div>
+        <div>
+          <h1>{seconds.toString().padStart(2, "0")}</h1>
+          <button onClick={() => dispatch(incrementSecs())}>+</button>
+        </div>
+      </div>
+      <button className="stop-btn" onClick={() => dispatch(addMeasurements())}>Stop</button>
+      <div className="measurements">
+        <h2>Lap list</h2>
+        <ul>
+          {measurements.map((time, index) => (
+            <li key={index}>{time}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
-};
+}
 
 export default Timer;

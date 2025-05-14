@@ -30,13 +30,13 @@ function Stopwatch() {
     <div className="stopwatch-container">
       <h1>{formatTime(time)}</h1>
       <div className="controls">
-        <button onClick={() => setIsRunning(!isRunning)}>{isRunning ? "Dayandır" : "Başla"}</button>
-        <button onClick={handleLap} disabled={!isRunning}>Dairə</button>
+        <button onClick={() => setIsRunning(!isRunning)}>{isRunning ? "Stop" : "Start"}</button>
+        <button onClick={handleLap} disabled={!isRunning}>Laps</button>
         <button onClick={() => {
           setIsRunning(false);
           setTime(0);
           setLaps([]);
-        }}>Sıfırla</button>
+        }}>Reset</button>
       </div>
       <div className="laps">
         <h2>Loops</h2>
