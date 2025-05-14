@@ -1,6 +1,6 @@
 import React from "react";
 import "App.css"
-import { Link, Routes, Route } from "react-router-dom";
+import { NavLink, Routes, Route } from "react-router-dom";
 import Clock from "./components/Clock";
 import Timer from "./components/Timer";
 import Stopwatch from "./components/Stopwatch";
@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="app-container">
       <nav style={{ marginBottom: '20px' }}>
-          <Link to="/clock" className="nav-link" style={{ marginRight: '10px' }}>Clock</Link>
-          <Link to="/stopwatch" className="nav-link" style={{ marginRight: '10px' }}>Stopwatch</Link>
-          <Link to="/timer" className="nav-link" style={{ marginRight: '10px' }}>Timer</Link>
+          <NavLink to="/clock" className="nav-link" style={{ marginRight: '10px' }}>Clock</NavLink>
+          <NavLink to="/stopwatch" className="nav-link" style={{ marginRight: '10px' }}>Stopwatch</NavLink>
+          <NavLink to="/timer" className="nav-link" style={{ marginRight: '10px' }}>Timer</NavLink>
         </nav>
 
         <Routes>
