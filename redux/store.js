@@ -12,10 +12,10 @@ const timerSlice = createSlice({
         incrementHours: (state) => {
             state.hours = (state.hours + 1) % 24;
         },
-        incrementMinutes: (state) => {
+        incrementMins: (state) => {
             state.minutes = (state.minutes + 1) % 60;
         },
-        incrementSeconds: (state) => {
+        incrementSecs: (state) => {
             state.seconds = (state.seconds + 1) % 60;
         },
         addMeasurement: (state) => {
@@ -29,8 +29,8 @@ const timerSlice = createSlice({
 
 export const {
     incrementHours,
-    incrementMinutes,
-    incrementSeconds,
+    incrementMins,
+    incrementSecs,
     addMeasurement
 } = timerSlice.actions;
 

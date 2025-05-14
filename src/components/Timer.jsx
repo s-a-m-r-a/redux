@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { incrementHours, incrementMins, incrementSecs, addMeasurements } from '../../redux/store';
+import { incrementHours, incrementMins, incrementSecs, addMeasurement } from '../../redux/store';
 
 function Timer() {
   const { hours, minutes, seconds, measurements } = useSelector((state) => state.timer);
@@ -22,7 +22,7 @@ function Timer() {
           <button onClick={() => dispatch(incrementSecs())}>+</button>
         </div>
       </div>
-      <button className="stop-btn" onClick={() => dispatch(addMeasurements())}>Stop</button>
+      <button className="stop-btn" onClick={() => dispatch(addMeasurement())}>Stop</button>
       <div className="measurements">
         <h2>Lap list</h2>
         <ul>
