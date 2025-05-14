@@ -12,11 +12,20 @@ const timerSlice = createSlice({
         incrementHours: (state) => {
             state.hours = (state.hours + 1) % 24;
         },
+        decrementHours: (state) => {
+            state.hours = (state.hours - 1) % 24;
+        },
         incrementMins: (state) => {
             state.minutes = (state.minutes + 1) % 60;
         },
+        decrementMins: (state) => {
+            state.minutes = (state.minutes - 1) % 60;
+        },
         incrementSecs: (state) => {
             state.seconds = (state.seconds + 1) % 60;
+        },
+        decrementSecs: (state) => {
+            state.seconds = (state.seconds - 1) % 60;
         },
         addMeasurement: (state) => {
             const time = `${state.hours.toString().padStart(2, "0")}:${state.minutes
@@ -29,8 +38,11 @@ const timerSlice = createSlice({
 
 export const {
     incrementHours,
+    decrementHours,
     incrementMins,
+    decrementMins,
     incrementSecs,
+    decrementSecs,
     addMeasurement
 } = timerSlice.actions;
 

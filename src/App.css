@@ -16,6 +16,13 @@ body {
   max-width: 600px;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
 .nav-link {
   text-decoration: none;
   font-size: 18px;
@@ -43,6 +50,16 @@ body {
 .time-controls div {
   text-align: center;
 }
+.time-container button {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
 
 h1 {
   font-size: 48px;
@@ -63,13 +80,18 @@ button {
 button:hover {
   background-color: #3700b3;
 }
-
-.save-btn {
-  margin-top: 20px;
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .measurements, .laps {
-  margin-top: 20px;
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #5a0ba5;
+  border-radius: 8px;
   text-align: center;
 }
 
